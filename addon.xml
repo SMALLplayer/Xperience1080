@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.smallplayer_xp1080" version="0.0.1" name="SMALLplayer XP1080" provider-name="SMALLplayer">
+<addon id="skin.smallplayer_xp1080" version="0.0.2" name="SMALLplayer XP1080" provider-name="SMALLplayer">
 	<requires>
 		<import addon="xbmc.gui" version="4.0.0" />
 		<import addon="service.skin.widgets" version="0.0.25" />
