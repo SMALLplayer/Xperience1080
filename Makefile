@@ -12,9 +12,9 @@ ADDON_INFO=$(shell sed -n 's/.*id="\([^"]*\)" version="\([^"]*\)".*/\1 \2/p' < a
 ADDON_NAME=$(word 1,$(ADDON_INFO))
 ADDON_VER=$(word 2,$(ADDON_INFO))
 
-.PHONY: all clean distclean
+.PHONY: clean
 
-all: $(TEXTURES)
+$(ADDON_NAME)-$(ADDON_VER).zip: $(TEXTURES)
 	cd .. && zip $(ADDON_NAME)/$(ADDON_NAME)-$(ADDON_VER).zip $(addprefix $(ADDON_NAME)/,$(AR_CONTENT)) -rXq
 
 $(TEXTURES): $(IMAGES)
@@ -22,4 +22,3 @@ $(TEXTURES): $(IMAGES)
 
 clean:
 	rm -f $(TEXTURES)
-distclean: clean
