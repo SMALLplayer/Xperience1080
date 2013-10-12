@@ -8,12 +8,14 @@ IMAGES += $(shell find media/. -name "*gif" | sed 's/ /\\ /')
 AR_EXCLUDE:=media Makefile .git README.md
 AR_CONTENT=$(shell find . -maxdepth 1 -mindepth 1 $(patsubst %,-not -name '%',$(AR_EXCLUDE))) $(TEXTURES)
 
-AR_NAME=$(shell sed -n 's/.*id="\([^"]*\)" version="\([^"]*\)".*/\1-\2/p' < addon.xml)
+ADDON_INFO=$(shell sed -n 's/.*id="\([^"]*\)" version="\([^"]*\)".*/\1 \2/p' < addon.xml)
+ADDON_NAME=$(word 1,$(ADDON_INFO))
+ADDON_VER=$(word 2,$(ADDON_INFO))
+
+.PHONY: all clean distclean
 
 all: $(TEXTURES)
-	zip $(AR_NAME).zip $(AR_CONTENT) -rXq
-
-.PHONY: force
+	cd .. && zip $(ADDON_NAME)/$(ADDON_NAME)-$(ADDON_VER).zip $(addprefix $(ADDON_NAME)/,$(AR_CONTENT)) -rXq
 
 $(TEXTURES): $(IMAGES)
 	$(XBMCTEX) -input media/. -output $(TEXTURES)
