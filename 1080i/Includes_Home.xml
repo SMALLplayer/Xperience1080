@@ -377,7 +377,7 @@
                 <width>-50</width>
                 <height>100</height>
                 <animation effect="zoom"  start="100" end="80" time="300" tween="cubic" easing="inout" center="65,50" condition="!Control.HasFocus(225)">Conditional</animation>
-                <visible>!Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HideHomeSubmenuArrow)</visible>
+                <visible>false<!--!Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HideHomeSubmenuArrow)--></visible>
                 <control type="image">
                     <posx>-25</posx>
                     <posy>13</posy>
@@ -402,7 +402,7 @@
                 <width>-50</width>
                 <height>100</height>
                 <animation effect="zoom"  start="100" end="80" time="300" tween="cubic" easing="inout" center="65,50" condition="!Control.HasFocus(325)">Conditional</animation>
-                <visible>!Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HideHomeSubmenuArrow)</visible>
+                <visible>false<!--!Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HideHomeSubmenuArrow)--></visible>
                 <control type="image">
                     <posx>-25</posx>
                     <posy>13</posy>
@@ -426,7 +426,7 @@
                 <width>-50</width>
                 <height>100</height>
                 <animation effect="zoom"  start="100" end="80" time="300" tween="cubic" easing="inout" center="65,50" condition="!Control.HasFocus(425)">Conditional</animation>
-                <visible>!Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HideHomeSubmenuArrow)</visible>
+                <visible>false<!--!Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HideHomeSubmenuArrow)--></visible>
                 <control type="image">
                     <posx>-25</posx>
                     <posy>13</posy>
@@ -600,7 +600,7 @@
                     <onright condition="!System.GetBool(pvrmanager.enabled)">525</onright>
                     <onclick>SetProperty(HomeSearch,1)</onclick>
                     <onclick>RunScript(script.globalsearch)</onclick>
-                    <onup>80</onup>
+                    <!--<onup>80</onup>-->
                     <ondown>101</ondown>
                 </control>
                 <control type="group" id="150">
@@ -738,8 +738,8 @@
                     <onright>AlarmClock(HomeTileMoveTwo,Control.Move(5022,1),00:07,silent,loop)</onright>
                     <onright>Control.Move(20,1)</onright>
                     <onright>525</onright>
-                    <onclick>ActivateWindow(pvr)</onclick>
-                    <onup>80</onup>
+                    <!--<onclick>ActivateWindow(pvr)</onclick>
+                    <onup>80</onup>-->
                     <ondown>901</ondown>
                 </control>
                 <control type="group" id="950">
@@ -1617,9 +1617,9 @@
                     <onright condition="Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMusic)">425</onright>
                     <onright condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomePrograms)">625</onright>
                     <onright condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomePrograms)">725</onright>
-                    <onclick condition="!Library.HasContent(movies)">ActivateWindow(videos,files,return)</onclick>
+                    <!--<onclick condition="!Library.HasContent(movies)">ActivateWindow(videos,files,return)</onclick>
                     <onclick condition="Library.HasContent(movies)">ActivateWindow(videos,movietitles,return)</onclick>
-                    <onup>ActivateWindow(3020)</onup>
+                    <onup>ActivateWindow(3020)</onup>-->
                     <ondown>201</ondown>
                 </control>
                 <control type="group" id="250">
@@ -2331,9 +2331,9 @@
                     <onright condition="!Skin.HasSetting(HomeMusic)">425</onright>
                     <onright condition="Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomePrograms)">625</onright>
                     <onright condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomePrograms)">725</onright>
-                    <onclick condition="!Library.HasContent(tvshows)">ActivateWindow(videos,files,return)</onclick>
+                    <!--<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(videos,files,return)</onclick>
                     <onclick condition="Library.HasContent(tvshows)">ActivateWindow(videos,tvshowtitles,return)</onclick>
-                    <onup>ActivateWindow(3021)</onup>
+                    <onup>ActivateWindow(3021)</onup>-->
                     <ondown>301</ondown>
                 </control>
                 <control type="group" id="350">
@@ -2998,10 +2998,10 @@
                     <onright>Control.Move(20,1)</onright>
                     <onright condition="!Skin.HasSetting(HomePrograms)">625</onright>
                     <onright condition="Skin.HasSetting(HomePrograms)">725</onright>
-                    <onclick condition="!Library.HasContent(music)">ActivateWindow(musicfiles)</onclick>
+                    <!--<onclick condition="!Library.HasContent(music)">ActivateWindow(musicfiles)</onclick>
                     <onclick condition="Library.HasContent(music) + IsEmpty(Skin.String(music.path))">ActivateWindow(musiclibrary)</onclick>
                     <onclick condition="Library.HasContent(music) + !IsEmpty(Skin.String(music.path))">ActivateWindow(musiclibrary,$INFO[Skin.String(music.path)],return)</onclick>
-                    <onup>ActivateWindow(3022)</onup>
+                    <onup>ActivateWindow(3022)</onup>-->
                     <ondown>401</ondown>
                 </control>
                 <control type="group" id="450">
@@ -3664,8 +3664,8 @@
                     <onright>CancelAlarm(HomeTileMoveThree,true)</onright>
                     <onright>Control.Move(20,1)</onright>
                     <onright>725</onright>
-                    <onclick>ActivateWindow(programs)</onclick>
-                    <onup>80</onup>
+                    <!--<onclick>ActivateWindow(programs)</onclick>
+                    <onup>80</onup>-->
                     <ondown>601</ondown>
                 </control>
                 <control type="group" id="650">
@@ -4087,7 +4087,7 @@
                     <onright>825</onright>
                     <onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
                     <onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
-                    <onup>80</onup>
+                    <!--<onup>80</onup>-->
                     <ondown>701</ondown>
                 </control>
                 <control type="group" id="750">
@@ -4899,7 +4899,7 @@
                     <onleft>725</onleft>
                     <onright condition="!Window.IsVisible(3009)">SetProperty(BounceRight,1,Home)</onright>
                     <onclick>ActivateWindow(4)</onclick>
-                    <onup>80</onup>
+                    <!--<onup>80</onup>-->
                     <ondown>801</ondown>
                 </control>
                 <control type="group" id="850">
