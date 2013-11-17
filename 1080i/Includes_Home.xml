@@ -185,7 +185,7 @@
             <posy>24</posy>
             <include>BannerListInfoAnimation</include>
             <control type="group">
-                <visible>!Skin.HasSetting(HideHomeProfileInfo)</visible>
+                <!--<visible>!Skin.HasSetting(HideHomeProfileInfo)</visible>-->
                 <animation type="Conditional" condition="System.HasMediaDVD">
                     <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
                     <effect type="zoom" start="100" end="50" center="125,80" tween="sine" easing="inout" time="300" />
@@ -193,11 +193,11 @@
                 <control type="image">
                     <posx>25</posx>
                     <posy>46</posy>
-                    <width>60</width>
-                    <height>60</height>
-                    <texture>$INFO[System.ProfileThumb]</texture>
+                    <width>150</width>
+                    <height>135</height>
+                    <texture>smallplayer/smallplayer_small.png</texture>
                 </control>
-                <control type="image">
+                <!--<control type="image">
                     <posx>13</posx>
                     <posy>34</posy>
                     <width>84</width>
@@ -223,7 +223,7 @@
                     <include>HomeProfileInfoLabel</include>
                     <label>$INFO[Window.Property(Music.SongsCount),, $LOCALIZE[134]]</label>
                     <visible>Container(30).HasFocus(4)</visible>
-                </control>
+                </control>-->
                 <control type="wraplist" id="30">
                     <posx>0</posx>
                     <posy>0</posy>
