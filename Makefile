@@ -5,7 +5,7 @@ IMAGES := $(shell find media/. -name "*jpg" | sed 's/ /\\ /')
 IMAGES += $(shell find media/. -name "*png" | sed 's/ /\\ /')
 IMAGES += $(shell find media/. -name "*gif" | sed 's/ /\\ /')
 
-AR_EXCLUDE:=media Makefile .git README.md .gitignore
+AR_EXCLUDE:=media Makefile README.md *.zip .*
 AR_CONTENT=$(shell find . -maxdepth 1 -mindepth 1 $(patsubst %,-not -name '%',$(AR_EXCLUDE))) $(TEXTURES)
 
 ADDON_INFO=$(shell sed -n 's/.*id="\([^"]*\)" version="\([^"]*\)".*/\1 \2/p' < addon.xml)
